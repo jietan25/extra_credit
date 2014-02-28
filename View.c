@@ -86,13 +86,28 @@ void ViewGetStr
  *------------------------------------------------------------------------------------------------------------*/
 void ViewHelp() {
     /* Call ViewVersion() to display the version information. */
-    ???
+    ViewVersion();
 
     /*
      * Write printf() statements to print the help information. See the project document in Section 4 where I
      * describe the -h option for what you should display here.
      */
-    ???
+    printf("Encrypts or decrypts a message using the Vigenere cipher.\n\n"
+
+           "Usage: vigenere mode [-h] -k keyfile [-v]\n\n"
+
+           "If performing encryption (mode = e), the plaintext is read from stdin and the ciphertext is\n"
+           "written to stdout. If performing decryption (mode = d), the ciphertext is read from stdin and\n"
+           "the plaintext is written to stdout. Modes are:\n\n"
+
+           "\t  e  Encrypt the plaintext to produce the ciphertext using the specified key\n"
+           "\t  d  Decrypt the ciphertext to produce the plaintext using the specified key.\n\n"
+
+           "Options:\n"
+           "\t  -h  Displays this help message and terminates without further processing.\n"
+           "\t  -k  Reads the key from 'keyfile'."
+           "\t  -v  Displays version info and terminates without further processing.\n"
+           ");
 }
 
 /*--------------------------------------------------------------------------------------------------------------

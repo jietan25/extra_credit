@@ -70,23 +70,19 @@
  * RETURNS:  Zero on success. On failure, MainTerminate() is called with a nonzero return code to terminate the
  *           program.
  *------------------------------------------------------------------------------------------------------------*/
-int main
-    (
-    int   pArgc,
-    char *pArgv[]
-    )
+int main(int pArgc, char *pArgv[])
 {
     /* Call ControllerBegin() */
-    ???
+    ControllerBegin(Argc, pArgv);
 
     /* Call ControllerRun() */
-    ???
+    ControllerRun();
 
     /* Call ControllerEnd() */
-    ???
+    ControllerEnd();
 
     /* What should main return? */
-    ???
+    return 0;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -109,12 +105,7 @@ int main
  *           that it looks very similar to this, only without the pTermCode parameters, and it will handle
  *           more format specifiers than just %c, %d, and %s.
  *------------------------------------------------------------------------------------------------------------*/
-void MainTerminate
-	(
-	int   pTermCode,
-    char *pFmt,
-	...
-	)
+void MainTerminate(int pTermCode, char *pFmt,...)
 {
     if (pTermCode != 0) {
         char *fp, msg[4096];

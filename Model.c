@@ -71,6 +71,8 @@ void ModelEnd
 	(
 	)
 {
+    gModelDbase.mKey=NULL;
+    gModelDbase.mKeyFilename=NULL;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -82,7 +84,7 @@ char *ModelGetKey
     (
     )
 {
-    ???
+    return gModelDbase.mKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -94,7 +96,7 @@ char *ModelGetKeyFilename
     (
     )
 {
-    ???
+    return gModelDbase.mKeyFilename;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -106,7 +108,7 @@ bool ModelGetMode
     (
     )
 {
-    ???
+    return gModelDbase.mMode;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -119,7 +121,8 @@ void ModelSetKey
     char *pKey
     )
 {
-    ???
+    //should use string copy use here?
+    gModelDbase.mKey = &pKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -127,12 +130,9 @@ void ModelSetKey
  * DESCR:    Sets the key file name string. Note: this is a mutator function for mKeyFilename.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelSetKeyFilename
-    (
-    char *pKeyFilename
-    )
+void ModelSetKeyFilename(char *pKeyFilename)
 {
-    ???
+    gModelDbase.mKeyFilename = &pKeyFilename;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -140,10 +140,7 @@ void ModelSetKeyFilename
  * DESCR:    Sets the mode integer. Note: this is a mutator function for mMode.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelSetMode
-    (
-    bool pMode
-    )
+void ModelSetMode(bool pMode)
 {
-    ???
+    gModelDbase.mMode = pMode;
 }

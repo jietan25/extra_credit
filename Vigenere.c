@@ -29,10 +29,10 @@
  *============================================================================================================*/
 
 /* Define a bool constant named VIGENERE_ENCRYPT and initialize it to false. */
-???
+bool const VIGENERE_ENCRYPT = false;
 
 /* Declare a bool constant named VIGENERE_DECRYPT and initialize it to true. */
-???
+bool const VIGENERE_DECRYPT = true;
 
 /*==============================================================================================================
  * Static function declarations.
@@ -73,7 +73,17 @@ char EncryptChar
  * int col <- pCiphertext[pIndex] - 'A'
  * return 'A' + (col - row +26) % 26
  *------------------------------------------------------------------------------------------------------------*/
-???
+char DecryptChar
+    (
+    char *pCiphertext,
+    char  pKeyChar,
+    int   pIndex
+    );
+{
+    int row = pKeyChar - 'A';
+    int col = pCiphertext[pIndex] - 'A';
+    return 'A' + (col - row +26) % 26;
+}
 
 /*--------------------------------------------------------------------------------------------------------------
  * FUNCTION: EncryptChar
@@ -93,7 +103,17 @@ char EncryptChar
  * int col <- pPlaintext[pIndex] - 'A'
  * return 'A' + (row + col) % 26
  *------------------------------------------------------------------------------------------------------------*/
-???
+char EncryptChar
+    (
+    char *pPlaintext,
+    char  pKeyChar,
+    int   pIndex
+    )
+{
+    int row = pKeyChar - 'A';
+    int col = pPlaintext[pIndex] - 'A';
+    return 'A' + (row + col) % 26;
+}
 
 /*--------------------------------------------------------------------------------------------------------------
  * FUNCTION: Vigenere
@@ -127,5 +147,37 @@ void Vigenere
     char *pOut
     )
 {
-    ???
+ // PSEUDOCODE:
+ //* Define k as an int variable and initialize it to 0.
+    int k = 0;
+
+ // Define i as an int variable.
+    int i;
+
+ //* Set the first char of pOut to the null character '\0'.
+    pOut[0] = NULL;
+
+ //* For i <- 0 to strlen(pIn) - 1 Do (increment i by one each time thru the loop)
+    for (i = 0, i <= strlen(pIn), ++i)
+    {
+ //*     If pMode is VIGENERE_ENCRYPT Then
+        if (pMode)
+        {
+ //*         Set pOut[i] to EncryptChar(pIn, pKey[k], i
+        pOut[i] = EncryptChar(pIn, pKey[k], i);
+        }
+ //*     Else
+        else
+        {
+  //*         Set pOut[i] to DecryptChar(pIn, pKey[k], i)
+        pOut[i]=DecryptChar(pIn, pKey[k], i);
+        }
+ //*     End If
+ //*     Set k to (k + 1) % strlen(pKey)
+        k = (k+1)% strlen(pKey);
+ //* End For
+    }
+ //* Set pOut[i] to the null character '\0'*/
+        pOut[i]=NULL;
+
 }

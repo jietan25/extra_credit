@@ -1,0 +1,17 @@
+$ vigenere -h
+Vigenere Cipher Version 1.0 
+
+Encrypts or decrypts a message using the Vigenere cipher.
+
+Usage: vigenere mode [-h] -k keyfile [-v]
+
+If performing encryption (mode = e), the plaintext is read from stdin and the ciphertext is
+written to stdout. If performing decryption (mode = d), the ciphertext is read from stdin and
+the plaintext is written to stdout. Modes are:
+
+	e  Encrypt the plaintext to produce the ciphertext using the specified key.
+	d  Decrypt the ciphertext to produce the plaintext using the specified key.
+Options:
+	-h  Displays this help message and terminates without further processing.
+	-k  Reads the key from 'keyfile'.
+	-v  Displays version info and terminates without further processing.
