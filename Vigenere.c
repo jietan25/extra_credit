@@ -22,6 +22,7 @@
  **************************************************************************************************************/
 #include <string.h>    /* For strlen() */
 #include "Vigenere.h"  /* Good to always include the module header file. See comments in Globals.c. */
+#include<stdio.h>
 
 /*==============================================================================================================
  * Global constant definitions. See comments in Globals.c concerning global constants. These particular
@@ -135,6 +136,7 @@ char EncryptChar
  *     Else
  *         Set pOut[i] to DecryptChar(pIn, pKey[k], i)
  *     End If
+ *     printf("%d\t%s\t%s\t%s\n", i, &pOut[i], &pKey[k], &pIn[i]);
  *     Set k to (k + 1) % strlen(pKey)
  * End For
  * Set pOut[i] to the null character '\0'
@@ -152,16 +154,15 @@ void Vigenere
     pOut[0]='\0';
 
 
-    for (i = 0; i <= strlen(pIn); ++i)
+    for (i = 0; i < strlen(pIn); ++i)
     {
+
         if (pMode)
         {
-        /*strcpy(pOut[i], EncryptChar(pIn, pKey[k], i));*/
         pOut[i]=EncryptChar(pIn, pKey[k], i);
         }
         else
         {
-        /*strcpy(pOut[i], DecryptChar(pIn, pKey[k], i));*/
         pOut[i]=EncryptChar(pIn, pKey[k], i);
         }
         k = (k+1)% strlen(pKey);

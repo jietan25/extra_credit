@@ -1,0 +1,6 @@
+1c1
+< TTGGQDAGJOPNA
+\ No newline at end of file
+---
+> TTGGQDAGJOPN
+\ No newline at end of file

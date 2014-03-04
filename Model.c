@@ -21,6 +21,7 @@
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
 #include "Model.h"  /* Good to always include the module header file. See comments in Globals.c. */
+#include <stdio.h>
 
 /*==============================================================================================================
  * Static global variables.
@@ -122,7 +123,7 @@ void ModelSetKey
     )
 {
     /*should use string copy use here?*/
-    strcpy(gModelDbase.mKey, pKey);
+    gModelDbase.mKey=pKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -132,7 +133,7 @@ void ModelSetKey
  *------------------------------------------------------------------------------------------------------------*/
 void ModelSetKeyFilename(char *pKeyFilename)
 {
-    gModelDbase.mKeyFilename = &pKeyFilename;
+    gModelDbase.mKeyFilename = pKeyFilename;
 }
 
 /*--------------------------------------------------------------------------------------------------------------

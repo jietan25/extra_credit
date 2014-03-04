@@ -220,6 +220,7 @@ static void ControllerParseCmdLine(int pArgc,   char *pArgv[])
         } else if (streq(pArgv[i], "-k")) {
             if (++i >= pArgc) MainTerminate(TERM_ERR_KEYFILE, "-k option, missing key file name.\n");
             ModelSetKeyFilename(pArgv[i]);
+
             bKeyfile = true;
         } else if (streq(pArgv[i], "-v")) {
             /* Call a certain View module function to display the version information. */
@@ -263,13 +264,8 @@ void ControllerRun()
     char msgout[MAX_MSG_LEN+1];
 
     strcpy(key, ModelGetKeyFilename());
-    /*printf("1.\t%s", *key);*/
-
     FileReadStr(key, key);
-    /*printf("2.\t%s", &key);*/
-
     ModelSetKey(key);
-    /*ModelGetMode();*/
     ControllerEncryptDecrypt(ModelGetMode(), msgout);
     ViewPrintStr(msgout);
 }

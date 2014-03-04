@@ -105,7 +105,7 @@ void ViewHelp() {
 
            "Options:\n"
            "\t  -h  Displays this help message and terminates without further processing.\n"
-           "\t  -k  Reads the key from 'keyfile'."
+           "\t  -k  Reads the key from 'keyfile'.\n"
            "\t  -v  Displays version info and terminates without further processing.\n");
 
 }
