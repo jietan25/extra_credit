@@ -73,7 +73,7 @@
 int main(int pArgc, char *pArgv[])
 {
     /* Call ControllerBegin() */
-    ControllerBegin(Argc, pArgv);
+    ControllerBegin(pArgc, pArgv);
 
     /* Call ControllerRun() */
     ControllerRun();

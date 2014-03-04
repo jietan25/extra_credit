@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent Types.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _TYPES_H_ /* Preprocessor guard to prevent Types.h from being included more than once */
+#define _TYPES_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global type definitions.
@@ -119,4 +119,4 @@ typedef signed char bool;
 #define false (0)
 #define true  (!(false))
 
-??? /* __TYPES_H__ */
+#endif /* __TYPES_H__ */

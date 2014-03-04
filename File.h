@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to File.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _FILE_H_ /* Preprocessor guard to File.h from being included more than once */
+#define _FILE_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
@@ -30,6 +30,15 @@
  *============================================================================================================*/
 
 /* Look at the function definitions in File.c to see what declarations you should write here. */
-???
+void FileReadStr
+    (
+    char *pFilename,
+    char *pString
+    );
+void FileWriteStr
+    (
+    char *pFilename,
+    char *pString
+    );
 
-??? /* __FILE_H__ */
+#endif /* __FILE_H__ */

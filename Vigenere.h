@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent Vigenere.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _VIGENERE_H_ /* Preprocessor guard to prevent Vigenere.h from being included more than once */
+#define _VIGENERE_H_
 
 /*
  * See comments in String.h concerning one header file including another header file. I am including Types.h
@@ -35,10 +35,10 @@
  *============================================================================================================*/
 
 /* Declare a bool constant named VIGENERE_ENCRYPT. */
-???
+bool const VIGENERE_ENCRYPT;
 
 /* Declare a bool constant named VIGENERE_DECRYPT. */
-???
+bool const VIGENERE_DECRYPT;
 
 /*==============================================================================================================
  * Global function declarations.
@@ -53,4 +53,4 @@ extern void Vigenere
     char *pOut
     );
 
-??? /* __VIGENERE_H__ */
+#endif /* __VIGENERE_H__ */

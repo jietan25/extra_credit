@@ -22,8 +22,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent Controller.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _CONTROLLER_H_ /* Preprocessor guard to prevent Controller.h from being included more than once */
+#define _CONTROLLER_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
@@ -44,4 +44,4 @@ extern void ControllerRun
     (
     );
 
-??? /* __CONTROLLER_H__ */
+#endif /* __CONTROLLER_H__ */

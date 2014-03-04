@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent View.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _VIEW_H_ /* Preprocessor guard to prevent View.h from being included more than once */
+#define _VIEW_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
@@ -58,4 +58,4 @@ extern void ViewVersion
     (
     );
 
-??? /* __VIEW_H__ */
+#endif /* __VIEW_H__ */

@@ -29,6 +29,7 @@
 #include "Types.h"       /* For bool */
 #include "View.h"        /* For ViewBegin(), ViewEnd(), ViewGetChar(), ViewHelp(), ViewVersion(), ViewPrintStr() */
 #include "Vigenere.h"    /* For Vigenere() */
+#include <stdio.h>
 
 /*==============================================================================================================
  * Static function declarations.
@@ -157,7 +158,7 @@ static void ControllerEncryptDecrypt(bool  pMode,  char *pMsgOut)
     ViewGetStr(msgin);
 
     /* Call Vigenere() to encrypt or decrypt the message. */
-    Vigenere(pMode, pMsgOut, msgin, "");
+    Vigenere(pMode, ModelGetKey(), msgin, pMsgOut);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -258,18 +259,17 @@ static void ControllerParseCmdLine(int pArgc,   char *pArgv[])
  *------------------------------------------------------------------------------------------------------------*/
 void ControllerRun()
 {
-    //define variables???
     char key[MAX_MSG_LEN+1];
     char msgout[MAX_MSG_LEN+1];
 
-    key = ModelGetKeyFilename();
-    printf("1.\t%s", key);
+    strcpy(key, ModelGetKeyFilename());
+    /*printf("1.\t%s", *key);*/
 
     FileReadStr(key, key);
-    printf("2.\t%s", key);
+    /*printf("2.\t%s", &key);*/
 
     ModelSetKey(key);
-    //ModelGetMode();
+    /*ModelGetMode();*/
     ControllerEncryptDecrypt(ModelGetMode(), msgout);
     ViewPrintStr(msgout);
 }

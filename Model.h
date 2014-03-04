@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent Model.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _MODEL_H_ /* Preprocessor guard to prevent Model.h from being included more than once */
+#define _MODEL_H_ /* See comments in Main.h. */
 
 #include "Types.h" /* For bool */
 
@@ -65,4 +65,4 @@ extern void ModelSetMode
     bool pMode
     );
 
-??? /* __MODEL_H__ */
+#endif /* __MODEL_H__ */

@@ -78,7 +78,7 @@ char DecryptChar
     char *pCiphertext,
     char  pKeyChar,
     int   pIndex
-    );
+    )
 {
     int row = pKeyChar - 'A';
     int col = pCiphertext[pIndex] - 'A';
@@ -147,37 +147,24 @@ void Vigenere
     char *pOut
     )
 {
- // PSEUDOCODE:
- //* Define k as an int variable and initialize it to 0.
     int k = 0;
-
- // Define i as an int variable.
     int i;
+    pOut[0]='\0';
 
- //* Set the first char of pOut to the null character '\0'.
-    pOut[0] = NULL;
 
- //* For i <- 0 to strlen(pIn) - 1 Do (increment i by one each time thru the loop)
-    for (i = 0, i <= strlen(pIn), ++i)
+    for (i = 0; i <= strlen(pIn); ++i)
     {
- //*     If pMode is VIGENERE_ENCRYPT Then
         if (pMode)
         {
- //*         Set pOut[i] to EncryptChar(pIn, pKey[k], i
-        pOut[i] = EncryptChar(pIn, pKey[k], i);
+        /*strcpy(pOut[i], EncryptChar(pIn, pKey[k], i));*/
+        pOut[i]=EncryptChar(pIn, pKey[k], i);
         }
- //*     Else
         else
         {
-  //*         Set pOut[i] to DecryptChar(pIn, pKey[k], i)
-        pOut[i]=DecryptChar(pIn, pKey[k], i);
+        /*strcpy(pOut[i], DecryptChar(pIn, pKey[k], i));*/
+        pOut[i]=EncryptChar(pIn, pKey[k], i);
         }
- //*     End If
- //*     Set k to (k + 1) % strlen(pKey)
         k = (k+1)% strlen(pKey);
- //* End For
     }
- //* Set pOut[i] to the null character '\0'*/
-        pOut[i]=NULL;
-
+    pOut[i]='\0';
 }

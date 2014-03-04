@@ -20,8 +20,8 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-???  /* Preprocessor guard to prevent Globals.h from being included more than once */
-???  /* See comments in Main.h. */
+#ifndef _GLOBALS_H_ /* Preprocessor guard to prevent Globals.h from being included more than once */
+#define _GLOBALS_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global constant declarations.
@@ -50,4 +50,4 @@ extern const int TERM_ERR_FILE;
 extern const int TERM_ERR_KEYFILE;
 extern const int TERM_ERR_MODE;
 
-??? /* __GLOBALS_H__ */
+#endif /* __GLOBALS_H__ */

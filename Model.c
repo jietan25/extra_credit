@@ -71,8 +71,8 @@ void ModelEnd
 	(
 	)
 {
-    gModelDbase.mKey=NULL;
-    gModelDbase.mKeyFilename=NULL;
+   /* gModelDbase.mKey=NULL;
+    gModelDbase.mKeyFilename=NULL;*/
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -121,8 +121,8 @@ void ModelSetKey
     char *pKey
     )
 {
-    //should use string copy use here?
-    gModelDbase.mKey = &pKey;
+    /*should use string copy use here?*/
+    strcpy(gModelDbase.mKey, pKey);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
