@@ -159,7 +159,7 @@ void Vigenere
 
         if (pMode)
         {
-        pOut[i]=EncryptChar(pIn, pKey[k], i);
+        pOut[i]=DecryptChar(pIn, pKey[k], i);
         }
         else
         {
